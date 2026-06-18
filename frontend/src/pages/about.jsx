@@ -1,169 +1,108 @@
 export default function About() {
-  return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "#725858",
-        padding: "60px 20px",
-        color: "white",
-      }}
-    >
-      {/* Heading */}
-      <div
-        style={{
-          textAlign: "center",
-          marginBottom: "50px",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "55px",
-            fontWeight: "bold",
-            marginBottom: "20px",
-            letterSpacing: "2px",
-          }}
-        >
-          About Fancy Store
-        </h1>
+  const features = [
+    { icon: "💍", title: "Fashion Accessories", desc: "Trendy jewellery and accessories for every occasion" },
+    { icon: "💄", title: "Cosmetics & Makeup", desc: "Premium beauty products at affordable prices" },
+    { icon: "🎁", title: "Gifts & Novelties", desc: "Perfect gifts for your loved ones" },
+    { icon: "🌸", title: "Personal Care", desc: "Quality personal care and fragrance products" },
+  ];
 
-        <p
-          style={{
-            maxWidth: "900px",
-            margin: "auto",
-            fontSize: "20px",
-            lineHeight: "1.8",
-            color: "#f5f5f5",
-          }}
-        >
-          Welcome to Fancy Store, your trusted destination for
-          elegant jewellery, fashion accessories, gifts, and
-          premium fancy products. We are committed to providing
-          quality products with excellent customer service.
+  return (
+    <div style={{ width: "100%", overflow: "hidden" }}>
+
+      {/* Hero */}
+      <div style={{
+        background: "linear-gradient(135deg, #725858, #5a3e3e)",
+        padding: "40px 20px",
+        textAlign: "center",
+      }}>
+        <h1 style={{ color: "#fff", fontSize: "clamp(22px, 5vw, 36px)", fontWeight: "800", marginBottom: "12px" }}>
+          About Us
+        </h1>
+        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "clamp(13px, 3vw, 16px)", maxWidth: "500px", margin: "0 auto", lineHeight: "1.6" }}>
+          Your trusted destination for fashion, beauty & lifestyle
         </p>
       </div>
 
-      {/* Mission & Vision */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: "30px",
-          marginBottom: "40px",
-        }}
-      >
-        <div
-          style={{
-            width: "500px",
-            background: "white",
-            color: "#333",
-            padding: "30px",
-            borderRadius: "15px",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-          }}
-        >
-          <h2
-            style={{
-              color: "#725858",
-              marginBottom: "15px",
-            }}
-          >
+      {/* Mission */}
+      <div style={{ padding: "30px 16px", maxWidth: "700px", margin: "0 auto" }}>
+        <div style={{
+          background: "#fff", borderRadius: "16px",
+          padding: "24px", marginBottom: "20px",
+          boxShadow: "0 4px 16px rgba(114,88,88,0.1)",
+          width: "100%",
+        }}>
+          <h2 style={{ color: "#725858", fontSize: "clamp(18px, 4vw, 24px)", fontWeight: "700", marginBottom: "12px" }}>
             🎯 Our Mission
           </h2>
-
-          <p
-            style={{
-              fontSize: "18px",
-              lineHeight: "1.8",
-            }}
-          >
-            Our mission is to deliver stylish, affordable, and
-            high-quality products while ensuring a smooth and
-            enjoyable shopping experience for every customer.
+          <p style={{ color: "#555", lineHeight: "1.8", fontSize: "clamp(13px, 3vw, 15px)" }}>
+            Our mission is to deliver stylish, affordable, and high-quality products
+            while ensuring a smooth shopping experience for every customer.
           </p>
         </div>
 
-        <div
-          style={{
-            width: "500px",
-            background: "white",
-            color: "#333",
-            padding: "30px",
-            borderRadius: "15px",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-          }}
-        >
-          <h2
-            style={{
-              color: "#725858",
-              marginBottom: "15px",
-            }}
-          >
-            👁️ Our Vision
-          </h2>
+        {/* Features Grid */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "12px",
+          marginBottom: "20px",
+        }}>
+          {features.map((f, i) => (
+            <div key={i} style={{
+              background: "#fff", borderRadius: "14px",
+              padding: "18px 14px", textAlign: "center",
+              boxShadow: "0 4px 12px rgba(114,88,88,0.08)",
+            }}>
+              <div style={{ fontSize: "28px", marginBottom: "8px" }}>{f.icon}</div>
+              <h3 style={{ color: "#725858", fontSize: "13px", fontWeight: "700", marginBottom: "6px" }}>
+                {f.title}
+              </h3>
+              <p style={{ color: "#888", fontSize: "12px", lineHeight: "1.5" }}>
+                {f.desc}
+              </p>
+            </div>
+          ))}
+        </div>
 
-          <p
-            style={{
-              fontSize: "18px",
-              lineHeight: "1.8",
-            }}
-          >
-            To become one of the most trusted and loved online
-            stores by offering unique collections, exceptional
-            service, and customer satisfaction.
-          </p>
+        {/* Stats */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "10px",
+        }}>
+          {[
+            { value: "10K+", label: "Customers" },
+            { value: "500+", label: "Products" },
+            { value: "99%", label: "Satisfaction" },
+          ].map((s, i) => (
+            <div key={i} style={{
+              background: "linear-gradient(135deg, #725858, #5a3e3e)",
+              borderRadius: "12px", padding: "16px 8px",
+              textAlign: "center",
+            }}>
+              <div style={{ color: "#ff9800", fontSize: "clamp(18px, 4vw, 24px)", fontWeight: "800" }}>
+                {s.value}
+              </div>
+              <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "11px", marginTop: "4px" }}>
+                {s.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Why Choose Us */}
-      <div
-        style={{
-          maxWidth: "1100px",
-          margin: "auto",
-          background: "white",
-          color: "#333",
-          padding: "40px",
-          borderRadius: "15px",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-        }}
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            color: "#725858",
-            marginBottom: "30px",
-          }}
-        >
-          ⭐ Why Choose Us?
-        </h2>
-
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            gap: "20px",
-          }}
-        >
-          <div style={{ textAlign: "center" }}>
-            <h1>🛍️</h1>
-            <h3>Quality Products</h3>
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <h1>🚚</h1>
-            <h3>Fast Delivery</h3>
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <h1>💳</h1>
-            <h3>Secure Payment</h3>
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <h1>❤️</h1>
-            <h3>Customer Support</h3>
-          </div>
+      {/* Contact Strip */}
+      <div style={{
+        background: "#fdf8f8",
+        padding: "24px 16px",
+        textAlign: "center",
+        borderTop: "1px solid #f0e8e8",
+      }}>
+        <h3 style={{ color: "#725858", marginBottom: "16px", fontSize: "16px" }}>Get In Touch</h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center" }}>
+          <p style={{ color: "#666", fontSize: "14px" }}>📞 +91 9876543210</p>
+          <p style={{ color: "#666", fontSize: "14px" }}>✉️ info@dazzlingrarefancy.com</p>
+          <p style={{ color: "#666", fontSize: "14px" }}>📍 Tamil Nadu, India</p>
         </div>
       </div>
     </div>
